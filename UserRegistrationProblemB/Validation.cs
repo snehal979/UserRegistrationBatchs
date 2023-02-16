@@ -11,7 +11,7 @@ namespace UserRegistrationProblemB
     {
         const string Name = "^[A-Z]{1}[a-z]{2,}$";
         const string MobileNumber = "^([91]?[ ]?)+[0-9]{10}$";
-        const string Password = "^[a-zA-Z]{8,}$";
+        const string Password = "^[a-z]{8,}[A-Z]{1,}$";
         /// <summary>
         /// Uc1 /Uc2Validation First And Last name
         /// </summary>
