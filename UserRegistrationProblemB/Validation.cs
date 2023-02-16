@@ -12,6 +12,9 @@ namespace UserRegistrationProblemB
         const string Name = "^[A-Z]{1}[a-z]{2,}$";
         const string MobileNumber = "^([91]?[ ]?)+[0-9]{10}$";
         const string Password = "^[a-z]{8,}([A-Z0-9]{1,})(@)$";
+        const string Email = "^[abc]+[.]{0,1}[a-zA-Z0-9]+[@][bl]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
+        /*abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl
+         * & co) and 2 optional (xyz & in) with precise @ and . positions*/
         /// <summary>
         /// Uc1 /Uc2Validation First And Last name
         /// </summary>
@@ -38,7 +41,7 @@ namespace UserRegistrationProblemB
                 return "Mobile number is Invalid";
         }
         /// <summary>
-        /// Uc5 Validation of Password
+        /// Uc5, 6,7,8 Validation of Password
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
@@ -48,6 +51,17 @@ namespace UserRegistrationProblemB
                 return "Password  matches";
             else
                 return "Password failed";
+        }
+        /// Uc3 -Validation of Email
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public string ValidationEmail(string input)
+        {
+            if (Regex.IsMatch(input, Email))
+                return "Email  matches";
+            else
+                return "Email failed";
         }
     }
 }
