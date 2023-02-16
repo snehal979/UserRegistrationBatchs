@@ -11,7 +11,7 @@
                 bool flag = true;
                 while (flag)
                 {
-                    Console.WriteLine("hint 1.FirstName 2.Last name 3.Exit");
+                    Console.WriteLine("hint 1.FirstName 2.Last name 3.Mobile number4.Exit");
                     int num = Convert.ToInt32(Console.ReadLine());
                     switch (num)
                     {
@@ -26,6 +26,11 @@
                             Console.WriteLine("LastName :"+code.ValidationName(lastName));
                             break;
                         case 3:
+                            Console.WriteLine("Enter the number");
+                            string number = Console.ReadLine();//911111111111//91 1111111111//1111111111
+                            Console.WriteLine(code.ValidationMobile(number));
+                            break;
+                        case 4:
                             flag = false;
                             Console.WriteLine("Thank you");
                             break;
