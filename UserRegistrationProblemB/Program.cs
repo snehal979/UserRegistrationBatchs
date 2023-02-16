@@ -5,14 +5,13 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("User Registration Program");
-            Console.WriteLine("User Registration Program....");
             Validation code = new Validation();
             try
             {
                 bool flag = true;
                 while (flag)
                 {
-                    Console.WriteLine("hint 1.FirstName 2.Exit");
+                    Console.WriteLine("hint 1.FirstName 2.Last name 3.Exit");
                     int num = Convert.ToInt32(Console.ReadLine());
                     switch (num)
                     {
@@ -22,6 +21,11 @@
                             Console.WriteLine("FirstName :"+code.ValidationName(firstName));
                             break;
                         case 2:
+                            Console.WriteLine("Enter the Last name");//"Bansod"
+                            string lastName = Console.ReadLine();
+                            Console.WriteLine("LastName :"+code.ValidationName(lastName));
+                            break;
+                        case 3:
                             flag = false;
                             Console.WriteLine("Thank you");
                             break;
