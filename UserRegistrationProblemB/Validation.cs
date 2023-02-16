@@ -11,6 +11,7 @@ namespace UserRegistrationProblemB
     {
         const string Name = "^[A-Z]{1}[a-z]{2,}$";
         const string MobileNumber = "^([91]?[ ]?)+[0-9]{10}$";
+        const string Password = "^[a-zA-Z]{8,}$";
         /// <summary>
         /// Uc1 /Uc2Validation First And Last name
         /// </summary>
@@ -35,6 +36,18 @@ namespace UserRegistrationProblemB
                 return "Mobile number is Valid";
             else
                 return "Mobile number is Invalid";
+        }
+        /// <summary>
+        /// Uc5 Validation of Password
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public string ValidationPassword(string input)
+        {
+            if (Regex.IsMatch(input, Password))
+                return "Password  matches";
+            else
+                return "Password failed";
         }
     }
 }

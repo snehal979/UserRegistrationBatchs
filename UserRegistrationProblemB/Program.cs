@@ -11,7 +11,7 @@
                 bool flag = true;
                 while (flag)
                 {
-                    Console.WriteLine("hint 1.FirstName 2.Last name 3.Mobile number4.Exit");
+                    Console.WriteLine("hint 1.FirstName 2.Last name 3.Mobile number 4.Password 5.Exit");
                     int num = Convert.ToInt32(Console.ReadLine());
                     switch (num)
                     {
@@ -31,6 +31,11 @@
                             Console.WriteLine(code.ValidationMobile(number));
                             break;
                         case 4:
+                            Console.WriteLine("Enter the password");
+                            string password = Console.ReadLine();//ssssssssssR@
+                            Console.WriteLine(code.ValidationPassword(password));
+                            break;
+                        case 5:
                             flag = false;
                             Console.WriteLine("Thank you");
                             break;
