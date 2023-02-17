@@ -11,7 +11,7 @@
                 bool flag = true;
                 while (flag)
                 {
-                    Console.WriteLine("hint 1.FirstName 2.Last name 3.Mobile number 4.Password 5.Email 6Exit");
+                    Console.WriteLine("hint 1.FirstName 2.Last name 3.Mobile number 4.Password 5.Email 6.EmailArray Validation7.Exit");
                     int num = Convert.ToInt32(Console.ReadLine());
                     switch (num)
                     {
@@ -41,6 +41,10 @@
                             Console.WriteLine(code.ValidationEmail("abc.xyz@bl.co.in"));
                             break;
                         case 6:
+                            string[] emalsArray = { "abc-100@yahoo.com", "abc-100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
+                            code.ValidationEmailArray(emalsArray);
+                            break;
+                        case 7:
                             flag = false;
                             Console.WriteLine("Thank you");
                             break;
