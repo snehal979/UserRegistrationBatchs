@@ -13,7 +13,7 @@ namespace UserRegistrationProblemB
         const string MobileNumber = "^([91]?[ ]?)+[0-9]{10}$";
         const string Password = "^[a-z]{8,}([A-Z0-9]{1,})(@)$";
        //const string Email = "^[abc]+[.]{0,1}[a-zA-Z0-9]+[@][bl]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
-        const string Email1 = "^[a-zA-Z0-9]+[.+-_]{0,1}[a-zA-Z0-9]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
+        const string Email1 = "^[a-zA-Z0-9]+[-.+_]{0,1}[a-zA-Z0-9]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";//[_-.+]
         /*abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl
          * & co) and 2 optional (xyz & in) with precise @ and . positions*/
         /// <summary>
@@ -25,9 +25,9 @@ namespace UserRegistrationProblemB
         public string ValidationName(string input)
         {
             if (Regex.IsMatch(input, Name))
-                return $"{input} is Valid";
+                return "Name is Valid";
             else
-                return $"{input} is Invalid";
+                return "Name is Invalid";
         }
         /// <summary>
         /// Uc4-Validation of phone number
