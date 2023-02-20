@@ -57,6 +57,21 @@ namespace UserRegistrationProgramTest
             string output = Code.ValidationEmail(input);
             Assert.AreEqual(expect, output);
         }
-       
+
+        /// <summary>
+        /// Uc 11 Pass the Email Array Vlidation
+        /// </summary>
+        [TestMethod]
+        public void CheckGivenInuput_WhenAnalyseProgram_EmailArrayValidationOfString()
+        {
+            string[] input = { "abc-100@yahoo.com", "abc-100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@gmail.com.com", "abc+100@gmail.com" };
+
+            foreach (string data in input)
+            {
+                string output = Code.ValidationEmail(data);
+                Assert.AreEqual("Email  matches", output);
+            }
+            
+        }
     }
 }
