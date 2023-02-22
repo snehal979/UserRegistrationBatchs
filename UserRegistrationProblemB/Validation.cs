@@ -36,10 +36,20 @@ namespace UserRegistrationProblemB
         /// <returns></returns>
         public string ValidationName(string input)
         {
-            if (Regex.IsMatch(input, Name))
-                return "Name is Valid";
-            else
-                return "Name is Invalid";
+            try
+            {
+                if (input.Equals(string.Empty))
+                    throw new ValidationException(ValidationException.ValidationExceptionType.EMPTY_NAME, "Name is Empty");
+                else if (Regex.IsMatch(input, Name))
+                    return "Name is Valid";
+                else
+                    return "Name is Invalid";
+            }
+            catch (NullReferenceException)
+            {
+                throw new ValidationException(ValidationException.ValidationExceptionType.NULL_NAME, "Name is null");
+
+            }
         }
         /// <summary>
         /// Uc4-Validation of phone number
@@ -48,10 +58,20 @@ namespace UserRegistrationProblemB
         /// <returns></returns>
         public string ValidationMobile(string input)
         {
-            if (Regex.IsMatch(input, MobileNumber))
-                return "Mobile number is Valid";
-            else
-                return "Mobile number is Invalid";
+            try
+            {
+                if (input.Equals(string.Empty))
+                    throw new ValidationException(ValidationException.ValidationExceptionType.EMPTY_MOBILE, "Mobile number is Empty");
+                else if (Regex.IsMatch(input, MobileNumber))
+                    return "Mobile number is Valid";
+                else
+                    return "Mobile number is Invalid";
+            }
+            catch (NullReferenceException)
+            {
+                throw new ValidationException(ValidationException.ValidationExceptionType.NULL_MOBILE, "Mobile number is null");
+
+            }
         }
         /// <summary>
         /// Uc5, 6,7,8 Validation of Password
@@ -60,10 +80,20 @@ namespace UserRegistrationProblemB
         /// <returns></returns>
         public string ValidationPassword(string input)
         {
-            if (Regex.IsMatch(input, Password))
-                return "Password  matches";
-            else
-                return "Password failed";
+            try
+            {
+                if (input.Equals(string.Empty))
+                    throw new ValidationException(ValidationException.ValidationExceptionType.EMPTY_PASSWORD, "Password is Empty");
+                else if (Regex.IsMatch(input, Password))
+                    return "Password  matches";
+                else
+                    return "Password failed";
+            }
+            catch (NullReferenceException)
+            {
+                throw new ValidationException(ValidationException.ValidationExceptionType.NULL_PASSWORD, "Password is null");
+
+            }
         }
         /// Uc3 -Validation of Email
         /// </summary>
@@ -71,10 +101,20 @@ namespace UserRegistrationProblemB
         /// <returns></returns>
         public string ValidationEmail(string input)
         {
-            if (Regex.IsMatch(input, Email1))
-                return "Email  matches";
-            else
-                return "Email failed";
+            try
+            {
+                if (input.Equals(string.Empty))
+                    throw new ValidationException(ValidationException.ValidationExceptionType.EMPTY_EMAIL, "Email is Empty");
+                else if (Regex.IsMatch(input, Email1))
+                    return "Email  matches";
+                else
+                    return "Email failed";
+            }
+            catch (NullReferenceException)
+            {
+                throw new ValidationException(ValidationException.ValidationExceptionType.NULL_EMAIL, "Email is null");
+
+            }
         }
         /// <summary>
         /// Uc9 ArrayPass Of Email Validation // Changes with Constructor
