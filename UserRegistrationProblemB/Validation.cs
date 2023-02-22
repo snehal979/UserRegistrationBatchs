@@ -13,9 +13,21 @@ namespace UserRegistrationProblemB
         const string MobileNumber = "^([91]?[ ]?)+[0-9]{10}$";
         const string Password = "^[a-z]{8,}([A-Z0-9]{1,})(@)$";
        //const string Email = "^[abc]+[.]{0,1}[a-zA-Z0-9]+[@][bl]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
-        const string Email1 = "^[a-zA-Z0-9]+[-.+_]{0,1}[a-zA-Z0-9]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";//[_-.+]
+        const string Email1 = "^[a-zA-Z0-9]+[-.+_]{0,1}[a-zA-Z0-9]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
         /*abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl
          * & co) and 2 optional (xyz & in) with precise @ and . positions*/
+
+        //Default constructor
+        public Validation()
+        {
+            Console.WriteLine("Default constructor");
+        }
+        //Parameterised Constructor pass array of email
+        string[] inputP;
+        public Validation(string[] input)
+        {
+            this.inputP = input;
+        }
         /// <summary>
         /// Uc1 /Uc2Validation First And Last name
         /// </summary>
@@ -65,18 +77,15 @@ namespace UserRegistrationProblemB
                 return "Email failed";
         }
         /// <summary>
-        /// Uc9 ArrayPass Of Email Validation
+        /// Uc9 ArrayPass Of Email Validation // Changes with Constructor
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public void ValidationEmailArray(string[] input)
+        public void ValidationEmailArray()
         {
-            foreach(var data in input)
+            foreach(var data in this.inputP)
             {
-                if (Regex.IsMatch(data, Email1))
-                    Console.WriteLine("Email  matches"); 
-                else
-                    Console.WriteLine("Email failed");
+                Console.WriteLine(ValidationEmail(data)); 
             }
         }
     }

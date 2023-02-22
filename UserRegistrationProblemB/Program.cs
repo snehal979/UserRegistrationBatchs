@@ -42,7 +42,8 @@
                             break;
                         case 6:
                             string[] emalsArray = { "abc-100@yahoo.com", "abc-100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
-                            code.ValidationEmailArray(emalsArray);
+                            Validation code1 = new Validation(emalsArray);
+                            code1.ValidationEmailArray(); 
                             break;
                         case 7:
                             flag = false;

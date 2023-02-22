@@ -59,16 +59,16 @@ namespace UserRegistrationProgramTest
         }
 
         /// <summary>
-        /// Uc 11 Pass the Email Array Vlidation
+        /// Uc 11 Pass the Email Array Validation Parameterised Constructor pass array of email
         /// </summary>
         [TestMethod]
         public void CheckGivenInuput_WhenAnalyseProgram_EmailArrayValidationOfString()
         {
             string[] input = { "abc-100@yahoo.com", "abc-100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@gmail.com.com", "abc+100@gmail.com" };
-
+            Validation Code1 = new Validation(input);
             foreach (string data in input)
             {
-                string output = Code.ValidationEmail(data);
+                string output = Code1.ValidationEmail(data);
                 Assert.AreEqual("Email  matches", output);
             }
             
