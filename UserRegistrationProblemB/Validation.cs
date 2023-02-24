@@ -20,7 +20,7 @@ namespace UserRegistrationProblemB
         //Default constructor
         public Validation()
         {
-            Console.WriteLine("Default constructor");
+          
         }
         //Parameterised Constructor pass array of email
         string[] inputP;
@@ -128,5 +128,14 @@ namespace UserRegistrationProblemB
                 Console.WriteLine(ValidationEmail(data)); 
             }
         }
+        /// <summary>
+        /// Uc13 Lambda Expression validation of Name,Mobile,Password,Email
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public string ValidationName_Lambda(string input) => Regex.IsMatch(input,Name) ? "Name is Valid":"Name is Invalid";
+        public string ValidationMobile_Lambda(string input) => Regex.IsMatch(input,MobileNumber) ? "Mobile is Valid" : "Mobile is Invalid";
+        public string ValidationPassword_Lambda(string input) => Regex.IsMatch(input,Password) ? "Password is Valid" : "Password is Invalid";
+        public string ValidationEmail_Lambda(string input) => Regex.IsMatch(input,Email1) ? "Email is Valid" : "Email is Invalid";
     }
 }
